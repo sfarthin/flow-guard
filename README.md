@@ -33,6 +33,8 @@ function handlePost(someUnsafeData: any): Point {
 
 ## Installation
 
+Requires babel 7.x
+
 ```
 npm install --save-dev babel-plugin-macros
 npm install --save-dev flow-guard
