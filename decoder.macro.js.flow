@@ -1,0 +1,11 @@
+// @flow
+
+import { string } from 'decoders';
+import type { Decoder } from 'decoders';
+
+function decoder<NewType>(x: any): Decoder<NewType> {
+  // $FlowFixMe
+  return null;
+}
+
+module.exports = decoder;

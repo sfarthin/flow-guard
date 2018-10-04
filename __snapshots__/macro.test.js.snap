@@ -1,0 +1,1039 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can create aliased checks 1`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.string)(\\"foo\\");"
+`;
+
+exports[`can create aliased checks 2`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.number)(14);"
+`;
+
+exports[`can create aliased checks 3`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.boolean)(true);"
+`;
+
+exports[`can create aliased checks 4`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.string)(\\"foo\\");"
+`;
+
+exports[`can create aliased checks 5`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.number)(14);"
+`;
+
+exports[`can create aliased checks 6`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.boolean)(true);"
+`;
+
+exports[`can create aliased checks 7`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.either3)(_decoders.undefined_, _decoders.null_, _decoders.string))(null);"
+`;
+
+exports[`can create aliased checks 8`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.either5)(_decoders.undefined_, _decoders.null_, _decoders.string, _decoders.boolean, _decoders.number))(3);"
+`;
+
+exports[`can create aliased checks 9`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.either)(_decoders.string, _decoders.null_))(null);"
+`;
+
+exports[`can create aliased checks 10`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.object)({
+  a: (0, _decoders.object)({
+    b: _decoders.string
+  }),
+  c: _decoders.number
+}))({
+  a: {
+    b: 'b'
+  },
+  c: 2
+});"
+`;
+
+exports[`can create aliased checks 11`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(\\"foo\\"))('foo');"
+`;
+
+exports[`can create aliased checks 12`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(5))(5);"
+`;
+
+exports[`can create aliased checks 13`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(true))(true);"
+`;
+
+exports[`can create aliased checks with shadowed variables 1`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.string)(\\"foo\\");
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 2`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.number)(14);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 3`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.boolean)(true);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 4`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.string)(\\"foo\\");
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 5`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.number)(14);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 6`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)(_decoders.boolean)(true);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 7`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.either3)(_decoders.undefined_, _decoders.null_, _decoders.string))(null);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 8`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.either5)(_decoders.undefined_, _decoders.null_, _decoders.string, _decoders.boolean, _decoders.number))(3);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 9`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.either)(_decoders.string, _decoders.null_))(null);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 10`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.object)({
+      a: (0, _decoders.object)({
+        b: _decoders.string
+      }),
+      c: _decoders.number
+    }))({
+      a: {
+        b: 'b'
+      },
+      c: 2
+    });
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 11`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.constant)(\\"foo\\"))('foo');
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 12`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.constant)(5))(5);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create aliased checks with shadowed variables 13`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = 'foo';
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    (0, _decoders.guard)((0, _decoders.constant)(true))(true);
+  }
+}
+
+foo();"
+`;
+
+exports[`can create inline checks 1`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.string)(\\"foo\\");"
+`;
+
+exports[`can create inline checks 2`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.number)(14);"
+`;
+
+exports[`can create inline checks 3`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.boolean)(true);"
+`;
+
+exports[`can create inline checks 4`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.string)(\\"foo\\");"
+`;
+
+exports[`can create inline checks 5`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.number)(14);"
+`;
+
+exports[`can create inline checks 6`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)(_decoders.boolean)(true);"
+`;
+
+exports[`can create inline checks 7`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.nullable)(_decoders.string))(null);"
+`;
+
+exports[`can create inline checks 8`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.either3)((0, _decoders.nullable)(_decoders.string), _decoders.boolean, _decoders.number))(3);"
+`;
+
+exports[`can create inline checks 9`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.either)(_decoders.string, _decoders.null_))(null);"
+`;
+
+exports[`can create inline checks 10`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.object)({
+  a: (0, _decoders.object)({
+    b: _decoders.string
+  }),
+  c: _decoders.number
+}))({
+  a: {
+    b: 'b'
+  },
+  c: 2
+});"
+`;
+
+exports[`can create inline checks 11`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(\\"foo\\"))('foo');"
+`;
+
+exports[`can create inline checks 12`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(5))(5);"
+`;
+
+exports[`can create inline checks 13`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+(0, _decoders.guard)((0, _decoders.constant)(true))(true);"
+`;
+
+exports[`can create inline checks with shadowed variables 1`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.string)(\\"foo\\");
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 2`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.number)(14);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 3`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.boolean)(true);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 4`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.string)(\\"foo\\");
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 5`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.number)(14);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 6`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)(_decoders.boolean)(true);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 7`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.nullable)(_decoders.string))(null);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 8`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.either3)((0, _decoders.nullable)(_decoders.string), _decoders.boolean, _decoders.number))(3);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 9`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.either)(_decoders.string, _decoders.null_))(null);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 10`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.object)({
+    a: (0, _decoders.object)({
+      b: _decoders.string
+    }),
+    c: _decoders.number
+  }))({
+    a: {
+      b: 'b'
+    },
+    c: 2
+  });
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 11`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.constant)(\\"foo\\"))('foo');
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 12`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.constant)(5))(5);
+}
+
+foo();"
+`;
+
+exports[`can create inline checks with shadowed variables 13`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+function foo() {
+  const guard = 'foo';
+  const string = 'foo';
+  const boolean = 'foo';
+  const object = 'foo';
+  (0, _decoders.guard)((0, _decoders.constant)(true))(true);
+}
+
+foo();"
+`;
+
+exports[`works with decoders 1`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.string;
+    guard(decoder)(\\"foo\\");
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 2`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.number;
+    guard(decoder)(14);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 3`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.boolean;
+    guard(decoder)(true);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 4`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.string;
+    guard(decoder)(\\"foo\\");
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 5`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.number;
+    guard(decoder)(14);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 6`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = _decoders.boolean;
+    guard(decoder)(true);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 7`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.either3)(_decoders.undefined_, _decoders.null_, _decoders.string);
+    guard(decoder)(null);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 8`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.either5)(_decoders.undefined_, _decoders.null_, _decoders.string, _decoders.boolean, _decoders.number);
+    guard(decoder)(3);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 9`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.either)(_decoders.string, _decoders.null_);
+    guard(decoder)(null);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 10`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.object)({
+      a: (0, _decoders.object)({
+        b: _decoders.string
+      }),
+      c: _decoders.number
+    });
+    guard(decoder)({
+      a: {
+        b: 'b'
+      },
+      c: 2
+    });
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 11`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.constant)(\\"foo\\");
+    guard(decoder)('foo');
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 12`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.constant)(5);
+    guard(decoder)(5);
+  }
+}
+
+foo();"
+`;
+
+exports[`works with decoders 13`] = `
+"\\"use strict\\";
+
+var _decoders = require(\\"decoders\\");
+
+const guard = require('decoders').guard;
+
+const string = 'foo';
+const boolean = 'foo';
+const object = 'foo';
+
+function foo() {
+  const gg = '4';
+  {
+    const ggg = '4';
+    const decoder = (0, _decoders.constant)(true);
+    guard(decoder)(true);
+  }
+}
+
+foo();"
+`;

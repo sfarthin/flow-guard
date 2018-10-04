@@ -1,13 +1,39 @@
 # Flow Guard
 
-Place runtime check for flow types with this babel macro.
+Flow Guard is a babel macro that adds a runtime guard for your flow types. This macro generates [decoders](https://nvie.com/posts/introducing-decoders/) based on your flow types and throws a runtime error if the unsafe data does not match. It is useful to type-check the boundaries of your application for incoming unsafe data (See [decoders](https://nvie.com/posts/introducing-decoders/)).
 
-```
-import guard from "flow-guard/macro";
+## Example guard macro
+
+```javascript
+import guard from 'flow-guard/macro';
 
 type Point = { x: number, y: number };
 
-function g(a: any): Point {
-  return guard<Point>({ x: 23, y: 65 });
+function handlePost(someUnsafeData: any): Point {
+  return guard < Point > someUnsafeData;
 }
 ```
+
+## Example decoder macro
+
+```javascript
+import createDecoder from "flow-guard/decoder-macro";
+import { guard } from 'decoders';
+
+type Point = { x: number, y: number };
+
+const pointDecoder = createDecoder<Point>();
+
+function handlePost(someUnsafeData: any): Point {
+  return guard(pointDecoder)(someUnsafeData);
+}
+```
+
+## Installation
+
+```
+npm install --save-dev babel-plugin-macros
+npm install --save-dev flow-guard
+```
+
+Edit .babelrc to include the macros plugin: 'macros'

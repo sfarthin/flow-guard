@@ -1,0 +1,7 @@
+__snapshots__
+.git
+.babel-plugin-macrosrc.js
+.babelrc.js
+.envrc
+.gitignore
+.prettierrc

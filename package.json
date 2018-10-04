@@ -5,14 +5,18 @@
   "author": "Steve Farthing <me@stevefar.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/plugin-syntax-flow": "^7.0.0",
     "babel-plugin-macros": "^2.4.2",
     "decoders": "^1.10.5",
-    "flow-bin": "^0.81.0"
+    "flow-bin": "^0.81.0",
+    "prettier": "^1.14.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
-    "@babel/plugin-syntax-flow": "^7.0.0",
-    "prettier": "^1.14.3"
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "jest": "^23.6.0"
   }
 }

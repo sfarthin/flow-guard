@@ -4,4 +4,4 @@ function guard<NewType>(x: any): NewType {
   return x;
 }
 
-module.exports = guard;
+export default guard;
