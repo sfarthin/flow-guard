@@ -5,18 +5,20 @@ Flow Guard is a babel macro that adds a runtime guard for your flow types. This 
 ## Example guard macro
 
 ```javascript
+// @flow
 import guard from 'flow-guard/macro';
 
 type Point = { x: number, y: number };
 
 function handlePost(someUnsafeData: any): Point {
-  return guard < Point > someUnsafeData;
+  return guard<Point>(someUnsafeData);
 }
 ```
 
 ## Example decoder macro
 
 ```javascript
+// @flow
 import createDecoder from "flow-guard/decoder-macro";
 import { guard } from 'decoders';
 
