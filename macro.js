@@ -60,13 +60,6 @@ const toDecoderFromFlowAst = opts => {
       return to('mixed');
     case 'Union': {
       const numTypes = typeNode.types.length;
-      if (numTypes > 9) {
-        throw new MacroError(
-          `Unable to handle more than 9 union types "${
-            typeNode.type
-          }" in for the code: ${originalCode}`,
-        );
-      }
 
       const types = typeNode.types.map(n =>
         toDecoderFromFlowAst({ ...opts, typeNode: n }),
@@ -76,6 +69,34 @@ const toDecoderFromFlowAst = opts => {
         {},
       );
 
+      if (numTypes > 15) {
+        throw new MacroError(
+          `Unable to handle more than 9 union types "${
+            typeNode.type
+          }" in for the code: ${originalCode}`,
+        );
+      }
+
+      if (numTypes > 9) {
+        const either = `either${numTypes - 8 > 2 ? numTypes - 8 : ''}`;
+        const eitherVn = getVariableNotInUse(either);
+
+        const either9 = getVariableNotInUse('either9');
+
+        return {
+          imports: {
+            ...imports,
+            ...newImports,
+            [either]: eitherVn,
+            either9: either9,
+          },
+          code: `${either9}(${types
+            .slice(0, 8)
+            .map(t => t.code)
+            .join(', ')}, ${eitherVn}(${types.slice(8).map(t => t.code)}))`,
+        };
+      }
+
       const either = `either${numTypes > 2 ? numTypes : ''}`;
       const eitherVn = getVariableNotInUse(either);
 
@@ -84,11 +105,44 @@ const toDecoderFromFlowAst = opts => {
         code: `${eitherVn}(${types.map(t => t.code).join(', ')})`,
       };
     }
+    case 'Inter':
+      const isAllObjTypes =
+        typeNode.types.filter(({ kind }) => kind === 'Obj').length ===
+        typeNode.types.length;
+      if (isAllObjTypes) {
+        const props = typeNode.types.reduce(
+          (acc, { props }) => [...acc, ...props],
+          [],
+        );
+        return toDecoderFromFlowAst({
+          ...opts,
+          typeNode: { kind: 'Obj', exact: false, frozen: false, props },
+        });
+      }
+      return toDecoderFromFlowAst({
+        ...opts,
+        typeNode: typeNode.types[0],
+      });
+    case 'Arr': {
+      const arrayType = toDecoderFromFlowAst({
+        ...opts,
+        typeNode: typeNode.type,
+      });
+      const array = getVariableNotInUse('array');
+
+      return {
+        imports: {
+          ...imports,
+          array,
+        },
+        code: `${array}(${arrayType.code})`,
+      };
+    }
     case 'Obj': {
       const types = typeNode.props.map(p => {
         return {
           optional: p.prop.prop.optional,
-          property: p.prop.name,
+          property: "'" + p.prop.name + "'",
           decoder: toDecoderFromFlowAst({
             ...opts,
             typeNode: p.prop.prop.type,
@@ -377,6 +431,9 @@ const decoderMacro = funName => ({ babel, references, state, config }) => {
         semi: true,
         parser: 'babylon',
       }),
+      {
+        placeholderPattern: false,
+      },
     )();
 
     /**
@@ -413,9 +470,8 @@ const decoderMacro = funName => ({ babel, references, state, config }) => {
                 }, `
               : ''
           }${Object.keys(allImports)
-            .map(
-              key =>
-                key === allImports[key] ? key : `${key} as ${allImports[key]}`,
+            .map(key =>
+              key === allImports[key] ? key : `${key} as ${allImports[key]}`,
             )
             .join(', ')} } from 'decoders'`,
         ),

@@ -19,7 +19,7 @@ function handlePost(someUnsafeData: any): Point {
 
 ```javascript
 // @flow
-import createDecoder from "flow-guard/decoder-macro";
+import createDecoder from 'flow-guard/decoder.macro';
 import { guard } from 'decoders';
 
 type Point = { x: number, y: number };
