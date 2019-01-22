@@ -1,6 +1,6 @@
 {
   "name": "flow-guard",
-  "version": "0.81.0",
+  "version": "0.82.0",
   "main": "index.js",
   "author": "Steve Farthing <me@stevefar.com>",
   "license": "MIT",
