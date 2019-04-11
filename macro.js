@@ -133,6 +133,7 @@ const toDecoderFromFlowAst = opts => {
       return {
         imports: {
           ...imports,
+          ...arrayType.imports,
           array,
         },
         code: `${array}(${arrayType.code})`,
