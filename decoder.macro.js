@@ -1,3 +1,1 @@
-const { decoderMacro } = require('./macro');
-
-module.exports = decoderMacro;
+module.exports = require('./macro').decoderMacro;

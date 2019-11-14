@@ -1,22 +1,22 @@
 {
-  "name": "flow-guard",
-  "version": "0.85.0",
+  "name": "the-flow-guard",
+  "version": "0.112.0",
   "main": "index.js",
   "author": "Steve Farthing <me@stevefar.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/plugin-syntax-flow": "^7.0.0",
-    "babel-plugin-macros": "^2.4.2",
-    "decoders": "^1.11.1",
-    "flow-bin": "^0.81.0",
-    "prettier": "^1.14.3"
+    "@babel/plugin-syntax-flow": "^7.7.0",
+    "babel-plugin-macros": "^2.6.1",
+    "decoders": "^1.17.0",
+    "flow-bin": "^0.112.0",
+    "prettier": "^1.19.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
-    "@babel/plugin-transform-flow-strip-types": "^7.0.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
-    "jest": "^23.6.0"
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/plugin-transform-flow-strip-types": "^7.6.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.0",
+    "jest": "^24.9.0"
   }
 }

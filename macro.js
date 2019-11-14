@@ -1,4 +1,4 @@
-// @flow
+// @noflow
 
 const { createMacro, MacroError } = require('babel-plugin-macros');
 const prettier = require('prettier');
@@ -71,9 +71,7 @@ const toDecoderFromFlowAst = opts => {
 
       if (numTypes > 15) {
         throw new MacroError(
-          `Unable to handle more than 9 union types "${
-            typeNode.type
-          }" in for the code: ${originalCode}`,
+          `Unable to handle more than 9 union types "${typeNode.type}" in for the code: ${originalCode}`,
         );
       }
 
@@ -177,6 +175,7 @@ const toDecoderFromFlowAst = opts => {
           .join(',')} })`,
       };
     }
+    case 'class':
     case 'Generic': {
       switch (typeNode.type.name) {
         case 'Number':
@@ -187,13 +186,13 @@ const toDecoderFromFlowAst = opts => {
           return to('boolean');
         case 'Date':
           return to('date');
+        default:
+          return to('mixed');
       }
     }
     default:
       throw new MacroError(
-        `Unable to create runtime guard for flow ast type "${
-          typeNode.kind
-        }" in for the code: ${originalCode}`,
+        `Unable to create runtime guard for flow ast type "${typeNode.kind}" in for the code: ${originalCode}`,
       );
   }
 };
@@ -262,9 +261,7 @@ const toDecoderFromBabelAst = opts => {
       const numTypes = typeNode.types.length;
       if (numTypes > 9) {
         throw new MacroError(
-          `Unable to handle more than 9 union types "${
-            typeNode.type
-          }" in for the code: ${originalCode}`,
+          `Unable to handle more than 9 union types "${typeNode.type}" in for the code: ${originalCode}`,
         );
       }
 
@@ -354,9 +351,7 @@ const toDecoderFromBabelAst = opts => {
 
     default:
       throw new MacroError(
-        `Unable to create runtime guard for type "${
-          typeNode.type
-        }" in for the code: ${originalCode}`,
+        `Unable to create runtime guard for type "${typeNode.type}" in for the code: ${originalCode}`,
       );
   }
 };
@@ -430,7 +425,7 @@ const decoderMacro = funName => ({ babel, references, state, config }) => {
     const node = babel.template(
       prettier.format(funName ? `${funIdentifier}(${code})()` : code, {
         semi: true,
-        parser: 'babylon',
+        parser: 'babel',
       }),
       {
         placeholderPattern: false,
